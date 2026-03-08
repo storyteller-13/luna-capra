@@ -56,6 +56,34 @@ const { title, description = config.defaultDescription } = Astro.props;
         <circle cx="200" cy="200" r="85" fill="url(#saturn-body)" />
       </svg>
     </div>
+    <div class="moon-bg" aria-hidden="true">
+      <svg class="moon-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- same soft glow as Saturn -->
+          <filter id="moon-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <!-- same planet gradient: lit top-left, shadow bottom-right -->
+          <radialGradient id="moon-body" cx="32%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.5" />
+            <stop offset="45%" stop-color="#e8e8e8" stop-opacity="0.35" />
+            <stop offset="85%" stop-color="#707070" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#404040" stop-opacity="0.2" />
+          </radialGradient>
+          <!-- clip to left half: exactly half of the circle = half-moon -->
+          <clipPath id="half-moon-clip">
+            <rect x="0" y="0" width="200" height="400" />
+          </clipPath>
+        </defs>
+        <g filter="url(#moon-glow)">
+          <circle cx="200" cy="200" r="85" fill="url(#moon-body)" clip-path="url(#half-moon-clip)" />
+        </g>
+      </svg>
+    </div>
     <div class="page-wrap">
       <slot />
     </div>

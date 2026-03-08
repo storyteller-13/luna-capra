@@ -16,7 +16,7 @@ const sorted = all.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric:
 const idx = sorted.findIndex((p) => p.id === poem.id);
 const prev = idx > 0 ? sorted[idx - 1] : null;
 const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
-const isComingSoon = !poem.body || poem.body.trim() === '' || poem.body.trim().toLowerCase().includes('coming soon');
+const isComingSoon = !poem.body || poem.body.trim() === '' || poem.body.trim().toLowerCase().includes('soon');
 ---
 <Layout title={poem.data.title} description={poem.data.title + config.poem.pageTitleSuffix}>
   <div class="page-frame">

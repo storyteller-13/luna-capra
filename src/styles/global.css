@@ -42,6 +42,24 @@
   opacity: 0.85;
 }
 
+/* Moon — top right, same style as Saturn */
+.moon-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.moon-svg {
+  position: absolute;
+  width: min(88vmin, 640px);
+  height: min(88vmin, 640px);
+  right: -22%;
+  top: -14%;
+  opacity: 0.85;
+}
+
 .page-wrap {
   position: relative;
   z-index: 1;

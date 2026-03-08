@@ -13,7 +13,7 @@ export const config = {
   },
   poem: {
     backToToc: '← table of contents',
-    comingSoon: 'coming soon.',
+    comingSoon: 'soon.',
     pageTitleSuffix: '',
   },
 } as const;
