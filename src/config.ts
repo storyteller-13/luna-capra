@@ -3,7 +3,7 @@ export const config = {
   defaultDescription:
     'a collection of poems about love, longing, and the quiet in-between.',
   cover: {
-    subtitle: 'a collection of poems to the moon, by marina von steinkirch',
+    subtitle: 'poems to the moon, by marina von steinkirch',
     cta: 'open the book',
   },
   toc: {

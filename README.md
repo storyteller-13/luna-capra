@@ -2,7 +2,7 @@
 
 <br>
 
-> *A collection of poems — unfolding one chapter every sunday."*
+> *a collection of poems — unfolding one chapter every sunday."*
 
 <br>
 
