@@ -1,9 +1,9 @@
 export const config = {
   siteName: 'luna capra',
   defaultDescription:
-    'a little book of poems — love, longing, and the quiet in-between.',
+    'a collection of poems about love, longing, and the quiet in-between.',
   cover: {
-    subtitle: 'a serenade to the moon, by marina von steinkirch',
+    subtitle: 'a collection of poems to the moon, by marina von steinkirch',
     cta: 'open the book',
   },
   toc: {

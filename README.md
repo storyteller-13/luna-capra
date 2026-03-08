@@ -1,8 +1,8 @@
-# 🌙 luna capra - poetry book
+# 🌙 luna capra
 
 <br>
 
-> *A little book of poems — unfolding one chapter every Sunday until August 2026.*
+> *A collection of poems — unfolding one chapter every sunday."*
 
 <br>
 
