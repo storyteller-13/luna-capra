@@ -104,6 +104,12 @@ h1, h2, h3 {
   margin: 0;
 }
 
+.cover-subtitle {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1.25rem;
+}
+
 .poem-body {
   max-width: 38rem;
   margin: 0 auto;
