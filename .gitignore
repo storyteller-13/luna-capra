@@ -8,6 +8,9 @@ dist/
 # Build / TypeScript
 *.tsbuildinfo
 
+# Lint
+.eslintcache
+
 # Environment
 .env
 .env.*
