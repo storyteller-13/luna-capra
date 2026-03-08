@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { config } from '../../config';
+
+const all = await getCollection('poems');
+const poems = all.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+---
+<Layout title={config.toc.title} description={config.toc.description}>
+  <div class="page-frame">
+    <div class="card">
+      <a href="/" class="back-link">{config.toc.back}</a>
+      <h1 class="book-title" style="margin-bottom: 1.5rem;">{config.toc.title}</h1>
+      <ol class="toc-list">
+        {poems.map((poem, i) => (
+          <li class="toc-item">
+            <span class="toc-num">{String(i + 1).padStart(2, '0')}</span>
+            <a href={`/poems/${poem.id}`}>{poem.data.title}</a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</Layout>

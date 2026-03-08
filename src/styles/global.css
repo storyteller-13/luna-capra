@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nothing+You+Could+Do&display=swap');
+
+:root {
+  --cream: #0d0d0d;
+  --cream-dark: #080808;
+  --paper: #161616;
+  --ink: #f0f0f0;
+  --ink-soft: #a0a0a0;
+  --accent: #c0c0c0;
+  --accent-rose: #e0e0e0;
+  --accent-sage: #a8a8a8;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --script: 'Nothing You Could Do', cursive;
+  --shadow-soft: 0 2px 24px rgba(0, 0, 0, 0.4);
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Saturn background — large, cute, behind content */
+.saturn-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.saturn-svg {
+  position: absolute;
+  width: min(95vmin, 720px);
+  height: min(95vmin, 720px);
+  left: -18%;
+  bottom: -20%;
+  transform: rotate(-18deg);
+  opacity: 0.85;
+}
+
+/* Moon — top right, same style as Saturn */
+.moon-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.moon-svg {
+  position: absolute;
+  width: min(88vmin, 640px);
+  height: min(88vmin, 640px);
+  right: -22%;
+  top: -14%;
+  opacity: 0.85;
+}
+
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--cream);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent-rose);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-rose);
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.book-title {
+  font-family: var(--script);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+}
+
+.cover-subtitle {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1.25rem;
+}
+
+.poem-body {
+  max-width: 38rem;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.poem-body p {
+  margin: 0 0 0.75em;
+}
+
+.poem-body p:last-child {
+  margin-bottom: 0;
+}
+
+.page-frame {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 42rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toc-item:last-child {
+  border-bottom: none;
+}
+
+.toc-num {
+  font-size: 0.85rem;
+  color: var(--accent);
+  min-width: 2rem;
+}
+
+.enter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--accent-rose);
+}
+
+.enter-link:hover {
+  color: var(--accent-rose);
+}
+
+.enter-link::after {
+  content: '→';
+}
+
+.back-link {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.nav-poem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.95rem;
+}
+
+.coming-soon {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.pub-date {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-top: 0.5rem;
+}

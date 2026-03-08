@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Astro
+dist/
+.astro/
+
+# Build / TypeScript
+*.tsbuildinfo
+
+# Lint
+.eslintcache
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+*.log
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-*
+
+# Package manager
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm/
+.pnpm-store/
+.vercel
