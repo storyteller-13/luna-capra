@@ -1,19 +1,19 @@
-/* Luna Capra — cute, nostalgic poetry book */
+/* Luna Capra — cute, nostalgic poetry book (dark mode) */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nothing+You+Could+Do&display=swap');
 
 :root {
-  --cream: #faf8f5;
-  --cream-dark: #f5f0e8;
-  --paper: #f2ede6;
-  --ink: #2c2420;
-  --ink-soft: #4a423c;
-  --accent: #c4a090;
-  --accent-rose: #d4a5a5;
-  --accent-sage: #a8b5a0;
+  --cream: #0d0d0d;
+  --cream-dark: #080808;
+  --paper: #161616;
+  --ink: #f0f0f0;
+  --ink-soft: #a0a0a0;
+  --accent: #c0c0c0;
+  --accent-rose: #e0e0e0;
+  --accent-sage: #a8a8a8;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --script: 'Nothing You Could Do', cursive;
-  --shadow-soft: 0 2px 12px rgba(44, 36, 32, 0.06);
+  --shadow-soft: 0 2px 24px rgba(0, 0, 0, 0.4);
   --radius: 12px;
 }
 
@@ -21,6 +21,31 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* Saturn background — large, cute, behind content */
+.saturn-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.saturn-svg {
+  position: absolute;
+  width: min(95vmin, 720px);
+  height: min(95vmin, 720px);
+  left: -18%;
+  bottom: -20%;
+  transform: rotate(-18deg);
+  opacity: 0.85;
+}
+
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
 }
 
 html {
@@ -35,8 +60,8 @@ body {
   color: var(--ink);
   background: var(--cream);
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(212, 165, 165, 0.08) 0%, transparent 50%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   line-height: 1.65;
 }
 
@@ -47,7 +72,7 @@ a {
 }
 
 a:hover {
-  color: var(--ink-soft);
+  color: var(--accent-rose);
 }
 
 h1, h2, h3 {
@@ -108,7 +133,7 @@ h1, h2, h3 {
   align-items: baseline;
   gap: 0.75rem;
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(44, 36, 32, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .toc-item:last-child {
@@ -131,7 +156,7 @@ h1, h2, h3 {
 }
 
 .enter-link:hover {
-  color: var(--ink-soft);
+  color: var(--accent-rose);
 }
 
 .enter-link::after {
@@ -149,7 +174,7 @@ h1, h2, h3 {
   justify-content: space-between;
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(44, 36, 32, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.95rem;
 }
 

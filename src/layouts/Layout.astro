@@ -20,6 +20,44 @@ const { title, description = config.defaultDescription } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-    <slot />
+    <div class="saturn-bg" aria-hidden="true">
+      <svg class="saturn-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- soft outer glow -->
+          <filter id="saturn-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <!-- planet: lit top-left, shadow bottom-right -->
+          <radialGradient id="saturn-body" cx="32%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.5" />
+            <stop offset="45%" stop-color="#e8e8e8" stop-opacity="0.35" />
+            <stop offset="85%" stop-color="#707070" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#404040" stop-opacity="0.2" />
+          </radialGradient>
+          <!-- ring gradient: brighter at edges -->
+          <linearGradient id="ring-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.15" />
+            <stop offset="50%" stop-color="#a0a0a0" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#fff" stop-opacity="0.12" />
+          </linearGradient>
+        </defs>
+        <!-- rings (layered for depth), then planet on top -->
+        <g filter="url(#saturn-glow)">
+          <ellipse cx="200" cy="200" rx="178" ry="56" stroke="url(#ring-grad)" stroke-width="2" fill="none" opacity="0.9" />
+          <ellipse cx="200" cy="200" rx="168" ry="53" stroke="rgba(255,255,255,0.08)" stroke-width="18" fill="none" stroke-linecap="round" />
+          <ellipse cx="200" cy="200" rx="158" ry="50" stroke="rgba(255,255,255,0.12)" stroke-width="6" fill="none" />
+          <ellipse cx="200" cy="200" rx="148" ry="47" stroke="rgba(200,200,200,0.15)" stroke-width="4" fill="none" />
+          <ellipse cx="200" cy="200" rx="138" ry="44" stroke="rgba(255,255,255,0.06)" stroke-width="10" fill="none" stroke-linecap="round" />
+        </g>
+        <circle cx="200" cy="200" r="85" fill="url(#saturn-body)" />
+      </svg>
+    </div>
+    <div class="page-wrap">
+      <slot />
+    </div>
   </body>
 </html>
