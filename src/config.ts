@@ -1,5 +1,5 @@
 export const config = {
-  siteName: 'luna capra',
+  siteName: 'luna capra - by marina von steinkirch',
   defaultDescription:
     'a little book of poems — love, longing, and the quiet in-between.',
   cover: {
