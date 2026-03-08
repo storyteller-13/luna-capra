@@ -3,7 +3,7 @@ export const config = {
   defaultDescription:
     'a little book of poems — love, longing, and the quiet in-between.',
   cover: {
-    subtitle: 'a serenade to the moon',
+    subtitle: 'a serenade to the moon, by marina von steinkirch',
     cta: 'open the book',
   },
   toc: {
