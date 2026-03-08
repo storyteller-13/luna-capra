@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { config } from '../config';
+---
+<Layout title={config.siteName}>
+  <div class="page-frame">
+    <div class="card" style="text-align: center;">
+      <h1 class="book-title">{config.siteName}</h1>
+      <p style="margin: 1rem 0 0; color: var(--ink-soft); font-size: 1.05rem;">{config.cover.subtitle}</p>
+      <a href="/poems/" class="enter-link">{config.cover.cta}</a>
+    </div>
+  </div>
+</Layout>

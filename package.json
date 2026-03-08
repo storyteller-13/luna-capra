@@ -1,0 +1,17 @@
+{
+  "name": "luna-capra",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.10.0",
+    "typescript": "^5.7.0"
+  }
+}

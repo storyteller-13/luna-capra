@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import { config } from '../../config';
+
+export async function getStaticPaths() {
+  const poems = await getCollection('poems');
+  const sorted = poems.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+  return sorted.map((poem) => ({ params: { id: poem.id }, props: { poem } }));
+}
+
+const { poem } = Astro.props;
+const { Content } = await render(poem);
+const all = await getCollection('poems');
+const sorted = all.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+const idx = sorted.findIndex((p) => p.id === poem.id);
+const prev = idx > 0 ? sorted[idx - 1] : null;
+const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
+const isComingSoon = !poem.body || poem.body.trim() === '' || poem.body.trim().toLowerCase().includes('coming soon');
+---
+<Layout title={poem.data.title} description={poem.data.title + config.poem.pageTitleSuffix}>
+  <div class="page-frame">
+    <div class="card">
+      <a href="/poems/" class="back-link">{config.poem.backToToc}</a>
+      <h1 style="font-size: 1.75rem; margin: 0;">{poem.data.title}</h1>
+      {poem.data.pubDate && (
+        <p class="pub-date">{poem.data.pubDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+      )}
+      <div class="poem-body">
+        {isComingSoon ? (
+          <p class="coming-soon">{config.poem.comingSoon}</p>
+        ) : (
+          <Content />
+        )}
+      </div>
+      <nav class="nav-poem">
+        {prev ? <a href={`/poems/${prev.id}`}>← {prev.data.title}</a> : <span />}
+        {next ? <a href={`/poems/${next.id}`}>{next.data.title} →</a> : <span />}
+      </nav>
+    </div>
+  </div>
+</Layout>
