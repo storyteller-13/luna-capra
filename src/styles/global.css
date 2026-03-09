@@ -136,6 +136,17 @@ h1, h2, h3 {
   padding: 2rem 1.5rem;
 }
 
+/* First page (cover) — larger type; footnote unchanged */
+.home-page .book-title {
+  font-size: clamp(2.5rem, 7.5vw, 4.25rem);
+}
+.home-page .cover-subtitle {
+  font-size: 1.45rem;
+}
+.home-page .enter-link {
+  font-size: 1.3rem;
+}
+
 .card {
   background: var(--paper);
   border-radius: var(--radius);
@@ -218,7 +229,7 @@ h1, h2, h3 {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   color: var(--ink-soft);
   padding: 0 1.5rem;
 }
