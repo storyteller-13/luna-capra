@@ -126,6 +126,13 @@ h1, h2, h3 {
   margin-bottom: 0;
 }
 
+.poem-body .dedication {
+  font-size: 0.7em;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.75em;
+}
+
 .page-frame {
   position: relative;
   min-height: 100vh;
