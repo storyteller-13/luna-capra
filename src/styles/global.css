@@ -127,6 +127,7 @@ h1, h2, h3 {
 }
 
 .page-frame {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -209,4 +210,24 @@ h1, h2, h3 {
   font-size: 0.9rem;
   color: var(--accent);
   margin-top: 0.5rem;
+}
+
+.support-footnote {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  padding: 0 1.5rem;
+}
+
+.support-footnote a {
+  color: var(--accent-rose);
+  font-weight: bold;
+}
+
+.support-footnote a:hover {
+  color: #fff;
 }
