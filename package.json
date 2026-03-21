@@ -10,7 +10,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "astro": "^6.0.8"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.7",
